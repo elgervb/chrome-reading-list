@@ -1,0 +1,19 @@
+{
+  "name": "Reading list",
+  "version": "0.0.2",
+  "description": "Reading list of url's to be read later",
+  "permissions": [
+    "bookmarks",
+    "contextMenus"
+  ],
+  "browser_action": {
+      "default_title": "Reading list",
+      "default_icon": "./assets/icon.png",
+      "default_popup": "popup.html"
+  },
+  "background": {
+    "page": "./background.html"
+  },
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
