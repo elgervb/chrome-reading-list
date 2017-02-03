@@ -1,0 +1,9 @@
+
+<div class="readinglist__item" ng-if="!$ctrl.hidden">
+    <a class="readinglist__item__link"
+        ng-click="$ctrl.onClick($ctrl.bookmark)"
+        href="{{$ctrl.bookmark.url}}"
+        title="{{$ctrl.bookmark.title}}">
+        {{$ctrl.bookmark.title}}
+    </a>
+</div>

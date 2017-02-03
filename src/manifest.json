@@ -1,9 +1,10 @@
 {
   "name": "Reading list",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Reading list of url's to be read later",
   "permissions": [
     "bookmarks",
+    "tabs",
     "contextMenus"
   ],
   "browser_action": {

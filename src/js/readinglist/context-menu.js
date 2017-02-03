@@ -21,10 +21,11 @@ export class ContextMenu {
     }
 
     handleClick(info, tab) {
+        debugger;
         if (info.linkUrl) {
             this.onBookmarkAdd(info.linkUrl, tab.title);
         } else if (info.sourceUrl) {
-            this.onBookmarkAdd(info.linkUrl, tab.title);
+            this.onBookmarkAdd(info.sourceUrl, tab.title);
         } else if (info.pageUrl) {
             this.onBookmarkAdd(info.pageUrl, tab.title);
         } else {
