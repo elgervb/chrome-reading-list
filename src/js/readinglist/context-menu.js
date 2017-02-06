@@ -1,4 +1,4 @@
-
+import {UrlParser} from './url-parser';
 
 export class ContextMenu {
 
@@ -22,7 +22,13 @@ export class ContextMenu {
 
     handleClick(info, tab) {
         if (info.linkUrl) {
-            this.onBookmarkAdd(info.linkUrl, info.linkUrl);
+            debugger;
+            const parsed = UrlParser.parse(info.linkUrl);
+            const title = decodeURIComponent(parsed.pathname)
+                .replace(/[-_\/]/g, ' ') // replace -_/
+                .replace(/\s\s+/g, ' '); // replace multi tabs
+
+            this.onBookmarkAdd(info.linkUrl, title);
         } else if (info.sourceUrl) {
             this.onBookmarkAdd(info.sourceUrl, tab.title);
         } else if (info.pageUrl) {
