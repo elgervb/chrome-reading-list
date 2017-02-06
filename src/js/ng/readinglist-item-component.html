@@ -4,6 +4,7 @@
         ng-click="$ctrl.onClick($ctrl.bookmark)"
         href="{{$ctrl.bookmark.url}}"
         title="{{$ctrl.bookmark.title}}">
+        <img ng-src="{{$ctrl.getFavicon($ctrl.bookmark)}}" class="readinglist__item__icon"/>
         {{$ctrl.bookmark.title}}
     </a>
 </div>

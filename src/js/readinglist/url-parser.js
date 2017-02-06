@@ -14,4 +14,13 @@ export class UrlParser {
             host: parser.host     // => "example.com:3000"
         };
     }
+
+    static getBase(parsed) {
+        let base = `${parsed.protocol}//${parsed.hostname}`;
+        if (parsed.port) {
+            base += `:${parsed.port}`;
+        }
+
+        return base;
+    }
 }

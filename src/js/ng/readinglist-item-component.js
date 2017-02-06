@@ -1,12 +1,17 @@
 
 import template from './readinglist-item-component.html';
+import {UrlParser} from '../readinglist/url-parser';
 import './readinglist-item-component.scss';
-
 class ReadinglistItemController {
     constructor(ReadinglistService, $scope) {
         '@ngInject';
         this.manager = ReadinglistService;
         this.$scope = $scope;
+    }
+
+    getFavicon(bookmark) {
+        const parsed = UrlParser.parse(bookmark.url);
+        return `${UrlParser.getBase(parsed)}/favicon.ico`;
     }
 
     onClick(bookmark) {

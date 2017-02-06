@@ -22,7 +22,6 @@ export class ContextMenu {
 
     handleClick(info, tab) {
         if (info.linkUrl) {
-            debugger;
             const parsed = UrlParser.parse(info.linkUrl);
             const title = decodeURIComponent(parsed.pathname)
                 .replace(/[-_\/]/g, ' ') // replace -_/
