@@ -9,7 +9,7 @@ export class ContextMenu {
     create() {
         const contexts = ['page', 'link', 'editable', 'image', 'video', 'audio'];
         const parent = chrome.contextMenus.create({
-            title: 'My Bookmarks',
+            title: 'My reading list',
             contexts
         });
         chrome.contextMenus.create({
