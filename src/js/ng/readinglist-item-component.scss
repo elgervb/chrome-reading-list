@@ -1,8 +1,19 @@
 
 .readinglist__item {
     overflow: hidden;
-    padding: .2rem .25rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
+
+    .readinglist__item__link {
+        border-bottom: 2px solid #999;
+        color: #666;
+        display: block;
+        overflow: hidden;
+        padding: .5rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+
+        &:hover {
+            background-color: #e4e4e4;
+        }
+    }
 }

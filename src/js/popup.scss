@@ -1,5 +1,10 @@
 
 @import './reset';
+@import './fonts';
+
+html {
+    font: 16px/16px 'Open Sans';
+}
 
 .popup {
     min-height: 200px;
