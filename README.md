@@ -1,6 +1,8 @@
 
 # MY READING LIST
-Google Chrome Extension to keep track of your readinglist.
+Google Chrome Extension to keep track of your readinglist. Add pages or links to your readinglist for later reading with a single right click.
+Review your readinglist from the extension popup in the top right corner of your screen.
+When signed in, the readinglist will be synced to your account, so you can use it on other devices as well.
 
 # 0.0.1 FEATURES
 - **add** items with a right click. Choose _![My reading list icon](https://raw.githubusercontent.com/elgervb/chrome-reading-list/master/src/assets/icon16.png) My reading list => Add bookmark_
