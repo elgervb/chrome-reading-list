@@ -18,7 +18,7 @@ export class UrlParser {
     static getBase(parsed) {
         let base = `${parsed.protocol}//${parsed.hostname}`;
         if (parsed.port) {
-            base += `:${parsed.port}`;
+            base = `${base}:${parsed.port}`;
         }
 
         return base;

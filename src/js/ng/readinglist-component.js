@@ -2,8 +2,8 @@ import template from './readinglist-component.html';
 import './readinglist-component.scss';
 
 class ReadinglistController {
+    /* @ngInject */
     constructor(ReadinglistService) {
-        '@ngInject';
 
         ReadinglistService.fetchBookmarks((readinglist) => {
             this.bookmarks = readinglist.children;

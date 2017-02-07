@@ -68,6 +68,7 @@
     "eslint-plugin-import": "2.2.0",
     "htmlhint-loader": "1.1.1",
     "jest": "18.1.0",
+    "ng-annotate-loader": "^0.2.0",
     "node-sass": "4.3.0",
     "phantomjs-prebuilt": "2.1.14",
     "postcss-loader": "1.2.2",
