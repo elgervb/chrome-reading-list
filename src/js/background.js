@@ -8,10 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const contextMenu = new ContextMenu(manager.addBookmark.bind(manager));
     contextMenu.create();
 
-
     chrome.runtime.onMessage.addListener((request) => {
         if (request.action === 'addBookmark') {
-            manager.addBookmark(request.title, request.url);
+            manager.addBookmark(request.url, request.title);
         }
     });
 });
