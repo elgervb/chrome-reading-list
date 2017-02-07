@@ -13,7 +13,7 @@
   ],
   "browser_action": {
       "default_title": "Reading list",
-      "default_icon": "./assets/icon.png",
+      "default_icon": "./assets/icon128.png",
       "default_popup": "popup.html"
   },
   "icons": {
