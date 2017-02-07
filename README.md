@@ -23,9 +23,11 @@ Alternatively, you can also bookmark links on the current page. Right click on a
 
 # SCREENS
 Reading list popup: list all reading list items
+
 ![Chrome Reading List Popup](https://github.com/elgervb/chrome-reading-list/blob/master/screens/Chrome-Reading-List-popup.png?raw=true)
 
 right click to show context menu
+
 ![Chrome Reading List Context menu](https://github.com/elgervb/chrome-reading-list/blob/master/screens/Chrome-Reading-List-Add-Item.png?raw=true)
 
 ## Manage reading list bookmarks
