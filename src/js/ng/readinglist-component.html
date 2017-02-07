@@ -12,12 +12,16 @@
 </ul>
 
 <footer class="readinglist__footer">
-    <input type="text" class="readinglist__filter" placeholder="filter" ng-model="$ctrl.filter" autofocus/>
-    <button
-        ng-click="$ctrl.fetchBookmarks()"
-        title="Reload reading list">&#8635;</button>
-    <button
-        ng-click="$ctrl.addCurrentPage()"
-        class="readinglist__btn-add"
-        title="Add current page">+</button>
+    <div class="readinglist__footer__left">
+        <input type="text" class="readinglist__filter" placeholder="filter" ng-model="$ctrl.filter" autofocus/>
+    </div>
+    <div class="readinglist__footer__right">
+        <button
+            ng-click="$ctrl.fetchBookmarks()"
+            title="Reload reading list">&#8635;</button>
+        <button
+            ng-click="$ctrl.addCurrentPage()"
+            class="readinglist__btn-add"
+            title="Add current page">+</button>
+    </div>
 </footer>

@@ -34,9 +34,26 @@
 }
 
 .readinglist__footer {
+    align-items: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+    display: flex;
     flex: 0 0 auto;
     text-align: right;
+
+    .readinglist__footer__left {
+        margin-left: .2rem;
+        text-align: left;
+        width: 50%;
+    }
+
+    .readinglist__footer__right {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: .2rem;
+        text-align: right;
+        width: 50%;
+    }
 
     .readinglist__filter {
         border: none;
