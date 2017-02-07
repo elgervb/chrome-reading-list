@@ -1,8 +1,18 @@
 
-<h1 class="readinglist__title">My Reading List</h1>
+<header class="readinglist__header">
+    <h1 class="readinglist__title">My Reading List
+        <span class="readinglist__title--small">({{($ctrl.bookmarks |filter:$ctrl.filter).length}} - {{$ctrl.bookmarks.length}})</span>
+    </h1>
+</header>
 
 <ul class="readinglist">
-    <li ng-repeat="bookmark in $ctrl.bookmarks">
+    <li ng-repeat="bookmark in $ctrl.bookmarks |filter:$ctrl.filter">
         <reading-list-item bookmark="bookmark"></reading-list-item>
     </li>
 </ul>
+
+<footer class="readinglist__footer">
+    <input type="text" class="readinglist__filter" placeholder="filter" ng-model="$ctrl.filter" />
+    <button title="Reload reading list">&#8635;</button>
+    <button title="Add current page">+</button>
+</footer>

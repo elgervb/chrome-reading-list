@@ -1,12 +1,47 @@
 
-.readinglist__title {
-    color: #444;
-    font-size: 1.2em;
-    font-weight: 600;
-    padding: .5rem;
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.readinglist__header {
+    flex: 0 0 auto;
+    margin-bottom: .7rem;
+
+    .readinglist__title {
+        color: #444;
+        font-size: 1.2em;
+        font-weight: 600;
+        overflow-y: auto;
+        padding: .5rem;
+        position: relative;
+
+        .readinglist__title--small {
+            color: #999;
+            font-size: .6em;
+        }
+    }
 }
 
 .readinglist {
+    flex: 1 1 auto;
     font-size: .8em;
     margin-bottom: .5rem;
+    overflow-y: auto;
+}
+
+.readinglist__footer {
+    flex: 0 0 auto;
+    text-align: right;
+
+    .readinglist__filter {
+        border: none;
+        border-bottom: 1px dotted #999;
+        color: #999;
+        font-size: .8em;
+        padding: .1rem .2rem;
+        width: 200px;
+    }
 }
