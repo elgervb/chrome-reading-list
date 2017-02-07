@@ -23,7 +23,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
     $stateProvider
     .state('readinglist', {
         url: '/',
-        template: '<reading-list></reading-list>'
+        template: '<reading-list class="page"></reading-list>'
     });
 });
 /* @ngInject */

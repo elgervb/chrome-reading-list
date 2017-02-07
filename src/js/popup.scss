@@ -4,9 +4,11 @@
 
 html {
     font: 16px/16px 'Open Sans';
+    height: 100%;
 }
 
 .popup {
-    min-height: 200px;
+    height: 100%;
+    min-height: 400px;
     width: 400px;
 }
