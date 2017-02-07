@@ -11,7 +11,7 @@ from the context menu
 - **open** reading list item in the current tab by clicking an item from the popup
 - **remove** reading list item. When opening a reading list item, it will be automatically removed from the list
 - **sync**: the extension stores all items in the _My Readinglist_ folder in your bookmarks. When signing into chrome with your account, bookmarks will be synced automatically when enabled.
-
+- **filter**: filter your reading list item, using keywords in the filter bar
 
 ## Add reading list bookmark
 The extension adds a context menu item to the page, which enables you to add a new bookmark to the readinglist.
