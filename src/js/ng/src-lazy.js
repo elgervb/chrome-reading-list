@@ -26,7 +26,7 @@ export class SrcLazyDirective {
 
         this.scrollContainer.addEventListener('scroll', this.scope.onScroll);
 
-        element.on('$destroy', function() {
+        element.on('$destroy', () => {
             this.$destroy();
         });
     }
