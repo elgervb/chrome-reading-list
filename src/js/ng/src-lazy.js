@@ -1,10 +1,10 @@
 
 export class SrcLazyDirective {
-    constructor($timeout, $window) {
+    constructor($window, Debouncer) {
         this.restrict = 'A';
         this.scope = {};
-        this.$timeout = $timeout;
         this.$window = $window;
+        this.Debouncer = Debouncer;
     }
 
     link(scope, element, attrs) {
@@ -16,12 +16,15 @@ export class SrcLazyDirective {
         }
 
         this.lazyLoad(element, attrs.srcLazy);
-
-        this.onScroll = () => {
+        this.scope.onScroll = this.Debouncer.debounce(() => {
+            // TODO removeEventListener impl is not working. For now fix like this
+            if (element.attr('src')) {
+                return;
+            }
             this.lazyLoad(element, attrs.srcLazy);
-        };
+        }, 250).bind(this);
 
-        this.scrollContainer.addEventListener('scroll', this.onScroll);
+        this.scrollContainer.addEventListener('scroll', this.scope.onScroll);
 
         element.on('$destroy', function() {
             this.$destroy();
@@ -29,18 +32,14 @@ export class SrcLazyDirective {
     }
 
     lazyLoad(element, lazySrc) {
-        this.$timeout(() => {
-            if (this.isElementInViewport(element[0])) {
-                element.attr('src', lazySrc);
-
-                this.$destroy();
-            }
-        }, 50);
+        if (this.isElementInViewport(element[0])) {
+            element.attr('src', lazySrc);
+            this.$destroy();
+        }
     }
 
     $destroy() {
-        // image loaded, remove event listener
-        this.scrollContainer.removeEventListener('scroll', this.onScroll);
+        this.scrollContainer.removeEventListener('scroll', this.scope.onScroll);
     }
 
     isElementInViewport (el) {
@@ -53,12 +52,10 @@ export class SrcLazyDirective {
         );
     }
 
-
-
     static factory() {
         /* @ngInject */
-        let factory = ($timeout, $window) => {
-            return new SrcLazyDirective($timeout, $window);
+        let factory = ($window, Debouncer) => {
+            return new SrcLazyDirective($window, Debouncer);
         };
         return factory;
     }
