@@ -3,23 +3,38 @@
     overflow: hidden;
 
     .readinglist__item__link {
+        align-items: center;
         border-bottom: 2px solid #ddd;
         color: #666;
-        display: block;
+        display: flex;
+        flex-direction: row;
         overflow: hidden;
         padding: .5rem;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 100%;
 
         &:hover {
             background-color: #e4e4e4;
         }
     }
 
+    .readinglist__item__container {
+        overflow: hidden;
+    }
+
+    .readinglist__item__title, .readinglist__item__url {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     .readinglist__item__icon {
         height: 16px;
+        margin-right: 1rem;
         vertical-align: bottom;
         width: 16px;
+    }
+
+    .readinglist__item__url {
+        color: #999;
+        font-size: .8em;
     }
 }
