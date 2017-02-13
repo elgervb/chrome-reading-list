@@ -7,7 +7,7 @@
 
 <div class="readinglist">
     <ul class="readinglist__list" ng-if="($ctrl.bookmarks |filter:$ctrl.filter).length > 0">
-        <li ng-repeat="bookmark in $ctrl.bookmarks |filter:$ctrl.filter">
+        <li class="readinglist__list__item" ng-repeat="bookmark in $ctrl.bookmarks |filter:$ctrl.filter">
             <reading-list-item bookmark="bookmark"></reading-list-item>
         </li>
     </ul>

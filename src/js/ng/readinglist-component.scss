@@ -20,6 +20,14 @@
         align-self: center;
         width: 100%;
     }
+
+    .readinglist__list {
+        width: 100%;
+
+        .readinglist__list__item {
+            display: block;
+        }
+    }
 }
 
 .readinglist__header {
