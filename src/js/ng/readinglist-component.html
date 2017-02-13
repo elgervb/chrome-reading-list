@@ -5,11 +5,15 @@
     </h1>
 </header>
 
-<ul class="readinglist">
-    <li ng-repeat="bookmark in $ctrl.bookmarks |filter:$ctrl.filter">
-        <reading-list-item bookmark="bookmark"></reading-list-item>
-    </li>
-</ul>
+<div class="readinglist">
+    <ul class="readinglist__list" ng-if="($ctrl.bookmarks |filter:$ctrl.filter).length > 0">
+        <li ng-repeat="bookmark in $ctrl.bookmarks |filter:$ctrl.filter">
+            <reading-list-item bookmark="bookmark"></reading-list-item>
+        </li>
+    </ul>
+
+    <h2 class="readinglist__no-items" ng-if="($ctrl.bookmarks |filter:$ctrl.filter).length < 1">No items found &hellip;</h2>
+</div>
 
 <footer class="readinglist__footer">
     <div class="readinglist__footer__left">
