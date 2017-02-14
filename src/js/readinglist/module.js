@@ -5,6 +5,7 @@ import {UrlParser} from './services/url-parser';
 import {SrcLazyDirective} from './directives/src-lazy';
 import {ReadinglistManager} from './services/manager';
 import {VersionService} from './services/readinglist-version-service';
+import {DesktopNotifications} from './services/desktop-notifications';
 import {Debouncer} from './services/debouncer-service';
 
 export const ReadinglistModule = angular.module('readinglist', [])
@@ -14,4 +15,5 @@ export const ReadinglistModule = angular.module('readinglist', [])
     .service('ReadinglistService', ReadinglistManager)
     .service('UrlParser', UrlParser)
     .service('Version', VersionService)
-    .service('Debouncer', Debouncer);
+    .service('Debouncer', Debouncer)
+    .service('DesktopNotifications', DesktopNotifications);
