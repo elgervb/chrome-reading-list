@@ -1,9 +1,10 @@
 const READINGLIST_BOOKMARK_NAME = 'My ReadingList';
+// const READINGLIST_ARCHIVE_BOOKMARK_NAME = 'My ReadingList - Archive';
 
 export class ReadinglistManager {
 
     constructor() {
-
+        //
     }
 
     fetchBookmarks(callback) {
@@ -61,6 +62,11 @@ export class ReadinglistManager {
                 callback(this.myReadingList);
             }
         });
+
+        // TODO enable when moving bookmarks to archive folder
+        // chrome.bookmarks.create({
+        //     title: READINGLIST_ARCHIVE_BOOKMARK_NAME
+        // });
     }
 
 }
