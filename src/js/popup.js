@@ -1,24 +1,9 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import {ReadinglistManager} from './readinglist/manager';
-import {ReadinglistComponent} from './ng/readinglist-component';
-import {ReadinglistItemComponent} from './ng/readinglist-item-component';
-import {UrlParser} from './readinglist/url-parser';
-import {SrcLazyDirective} from './ng/src-lazy';
-import {VersionService} from './ng/readinglist-version-service';
-import {Debouncer} from './ng/debouncer-service';
+import {ReadinglistModule} from './readinglist/module';
 import './popup.scss';
 
-
-const app = angular.module('readinglistApp', [uiRouter])
-    .component('readingList', new ReadinglistComponent())
-    .component('readingListItem', new ReadinglistItemComponent())
-    .directive('srcLazy', SrcLazyDirective.factory())
-    .service('ReadinglistService', ReadinglistManager)
-    .service('UrlParser', UrlParser)
-    .service('Version', VersionService)
-    .service('Debouncer', Debouncer);
-
+const app = angular.module('app', [uiRouter, ReadinglistModule.name]);
 /* @ngInject */
 app.config(($stateProvider, $urlRouterProvider) => {
 
@@ -35,8 +20,9 @@ app.config(($compileProvider) => {
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome|chrome-extension):/);
 });
 
+/* Bootstrap */
 angular.element(document).ready(() => {
-    angular.bootstrap(document, ['readinglistApp'], {
+    angular.bootstrap(document, ['app'], {
         strictDi: true
     });
 });

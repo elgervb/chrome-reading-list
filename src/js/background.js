@@ -1,4 +1,4 @@
-import {ReadinglistManager} from './readinglist/manager';
+import {ReadinglistManager} from './readinglist/services/manager';
 import {ContextMenu} from './readinglist/context-menu';
 
 document.addEventListener('DOMContentLoaded', () => {

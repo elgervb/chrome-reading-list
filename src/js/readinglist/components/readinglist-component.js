@@ -17,13 +17,21 @@ class ReadinglistController {
                 url: tab.url,
                 title: tab.title
             });
-
         });
     }
 
     fetchBookmarks() {
         this.service.fetchBookmarks((readinglist) => {
             this.bookmarks = readinglist.children;
+        });
+    }
+
+    $postLink() {
+        document.querySelector('body').addEventListener('keydown', () => {
+            const filterElement = document.querySelector('.readinglist__filter');
+            if (filterElement) {
+                filterElement.focus();
+            }
         });
     }
 }

@@ -1,4 +1,4 @@
-import {UrlParser} from './url-parser';
+import {UrlParser} from './services/url-parser';
 
 export class ContextMenu {
 

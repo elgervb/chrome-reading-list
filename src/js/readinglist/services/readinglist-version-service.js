@@ -1,4 +1,4 @@
-import manifest from '../../manifest.json';
+import manifest from 'manifest.json';
 
 export class VersionService {
     getVersion() {

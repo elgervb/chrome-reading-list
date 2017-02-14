@@ -1,7 +1,8 @@
 
 import template from './readinglist-item-component.html';
-import {UrlParser} from '../readinglist/url-parser';
+import {UrlParser} from '../services/url-parser';
 import './readinglist-item-component.scss';
+
 class ReadinglistItemController {
     /* @ngInject */
     constructor(ReadinglistService, $scope) {
