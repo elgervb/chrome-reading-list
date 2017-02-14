@@ -1,7 +1,7 @@
 {
   "name": "Chrome Reading list",
   "short_name": "Reading list",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Reading list of url's to be read later",
   "permissions": [
     "bookmarks",
