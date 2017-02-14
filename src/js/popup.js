@@ -5,6 +5,7 @@ import {ReadinglistComponent} from './ng/readinglist-component';
 import {ReadinglistItemComponent} from './ng/readinglist-item-component';
 import {UrlParser} from './readinglist/url-parser';
 import {SrcLazyDirective} from './ng/src-lazy';
+import {VersionService} from './ng/readinglist-version-service';
 import {Debouncer} from './ng/debouncer-service';
 import './popup.scss';
 
@@ -15,6 +16,7 @@ const app = angular.module('readinglistApp', [uiRouter])
     .directive('srcLazy', SrcLazyDirective.factory())
     .service('ReadinglistService', ReadinglistManager)
     .service('UrlParser', UrlParser)
+    .service('Version', VersionService)
     .service('Debouncer', Debouncer);
 
 /* @ngInject */

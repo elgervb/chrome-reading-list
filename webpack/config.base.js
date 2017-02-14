@@ -26,6 +26,12 @@ export default () => ({
         loaders: loaders(source)
     },
 
+    resolve: {
+        root: [
+            source
+        ]
+    },
+
     eslint: {
         configFile: '.eslintrc'
     },
@@ -36,6 +42,7 @@ export default () => ({
 
     sassLoader: {
         includePaths: [
+            './',
             './node_modules'
         ]
     },

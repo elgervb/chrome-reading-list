@@ -3,9 +3,10 @@ import './readinglist-component.scss';
 
 class ReadinglistController {
     /* @ngInject */
-    constructor(ReadinglistService) {
+    constructor(ReadinglistService, Version) {
         this.service = ReadinglistService;
         this.fetchBookmarks();
+        this.version = Version.getVersion();
     }
 
     addCurrentPage() {
