@@ -20,12 +20,12 @@ class ReadinglistItemController {
             const tab = tabs[0];
             chrome.tabs.update(tab.id, {url: bookmark.url});
 
-            this.moveBookmark(bookmark);
+            this.removeBookmark(bookmark);
         });
     }
 
-    moveBookmark(bookmark) {
-        this.manager.moveBookmark(bookmark.id, () => {
+    removeBookmark(bookmark) {
+        this.manager.removeBookmark(bookmark.id, () => {
             this.hidden = true;
             this.$scope.$apply();
         });
