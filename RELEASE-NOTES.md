@@ -1,8 +1,13 @@
+# 0.0.4
+- **bug** item was not removed from the list after clicking on it
+- **reduce plugin size** removing fonts reduced plugin size from approx 3MB to 90KB
+
 # 0.0.3
 - **icons** add lazy loading to images to address long wait time to open popup
 - **popup items** show more information (title, url) for each item in the popup
 - **no items** show message when no items could be found
 - **version info** in the popup
+- **start typing** to access the filter, no need to select the filter first
 - **bugfixing**
 
 # 0.0.2
