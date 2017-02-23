@@ -14,6 +14,7 @@ class ReadinglistController {
             const tab = tabs[0];
             chrome.runtime.sendMessage({
                 action: 'addBookmark',
+                context: 'popup',
                 url: tab.url,
                 title: tab.title
             });

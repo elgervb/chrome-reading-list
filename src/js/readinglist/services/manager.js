@@ -18,6 +18,11 @@ export class ReadinglistManager {
         });
     }
 
+    /**
+     * return all reading list items
+     *
+     * @returns {Object[]} all reading list items
+     */
     get readingList() {
         return this.myReadingList;
     }
@@ -41,12 +46,15 @@ export class ReadinglistManager {
         }
     }
 
-    addBookmark(url, title) {
+    addBookmark(url, title, context) {
         chrome.bookmarks.create({
             parentId: this.readingList.id,
             title,
             url
         });
+
+        const ctx = context || 'unknown';
+        ga('send', 'event', 'bookmark', 'add', ctx, this.readingList.children.length);
     }
 
     removeBookmark(id, callback) {

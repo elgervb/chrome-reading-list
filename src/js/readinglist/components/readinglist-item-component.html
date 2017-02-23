@@ -4,7 +4,11 @@
         ng-click="$ctrl.onClick($ctrl.bookmark)"
         href="{{$ctrl.bookmark.url}}"
         title="{{$ctrl.bookmark.title}}">
-        <img src-lazy="{{$ctrl.getFavicon($ctrl.bookmark)}}" lazy-container=".readinglist" class="readinglist__item__icon"/>
+        <img
+            src-lazy="{{$ctrl.getFavicon($ctrl.bookmark)}}"
+            lazy-container=".readinglist"
+            on-error="$ctrl.onErrorImgLoad"
+            class="readinglist__item__icon"/>
         <div class="readinglist__item__container">
             <div class="readinglist__item__title">{{$ctrl.bookmark.title}}</div>
             <div class="readinglist__item__url">{{$ctrl.bookmark.url}}</div>

@@ -8,12 +8,13 @@ export class SrcLazyDirective {
     }
 
     link(scope, element, attrs) {
-
         if (attrs.lazyContainer) {
             this.scrollContainer = document.querySelector(attrs.lazyContainer);
         } else {
             this.scrollContainer = this.$window;
         }
+
+        element[0].onerror = this.onError;
 
         this.lazyLoad(element, attrs.srcLazy);
         this.scope.onScroll = this.Debouncer.debounce(() => {
@@ -36,6 +37,16 @@ export class SrcLazyDirective {
             element.attr('src', lazySrc);
             this.$destroy();
         }
+    }
+
+    onError(e) {
+        const element = e.target;
+
+        console.log('asfd');
+        debugger;
+        e.currentTarget = laksdfjlaskjf
+
+        this.lazyLoad(element);
     }
 
     $destroy() {

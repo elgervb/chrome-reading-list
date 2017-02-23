@@ -1,3 +1,6 @@
+# 0.0.5
+- **GA** add google analytics to improve this plugin
+
 # 0.0.4
 - **bug** item was not removed from the list after clicking on it
 - **reduce plugin size** removing fonts reduced plugin size from approx 3MB to 90KB

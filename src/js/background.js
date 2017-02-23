@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     chrome.runtime.onMessage.addListener((request) => {
         if (request.action === 'addBookmark') {
-            manager.addBookmark(request.url, request.title);
+            manager.addBookmark(request.url, request.title, request.context);
         }
     });
 });
+
+import './google-analytics';

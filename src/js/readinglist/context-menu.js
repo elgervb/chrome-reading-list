@@ -21,17 +21,18 @@ export class ContextMenu {
     }
 
     handleClick(info, tab) {
+        const context = 'context-menu';
         if (info.linkUrl) {
             const parsed = UrlParser.parse(info.linkUrl);
             const title = decodeURIComponent(parsed.pathname)
                 .replace(/[-_\/]/g, ' ') // replace -_/
                 .replace(/\s\s+/g, ' '); // replace multi tabs
 
-            this.onBookmarkAdd(info.linkUrl, title);
+            this.onBookmarkAdd(info.linkUrl, title, context);
         } else if (info.sourceUrl) {
-            this.onBookmarkAdd(info.sourceUrl, tab.title);
+            this.onBookmarkAdd(info.sourceUrl, tab.title, context);
         } else if (info.pageUrl) {
-            this.onBookmarkAdd(info.pageUrl, tab.title);
+            this.onBookmarkAdd(info.pageUrl, tab.title, context);
         } else {
             throw new Error('No bookmarkable url found...');
         }
@@ -40,6 +41,7 @@ export class ContextMenu {
     sendBookmarkableUrl(url, title) {
         chrome.runtime.sendMessage({
             action: 'addBookmark',
+            context: 'context-menu',
             url,
             title
         });

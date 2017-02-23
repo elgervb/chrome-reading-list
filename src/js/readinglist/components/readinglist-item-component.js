@@ -20,8 +20,14 @@ class ReadinglistItemController {
             const tab = tabs[0];
             chrome.tabs.update(tab.id, {url: bookmark.url});
 
+            ga('send', 'event', 'bookmark', 'select', 'bookmarks');
+
             this.removeBookmark(bookmark);
         });
+    }
+
+    onErrorImgLoad() {
+        debugger;
     }
 
     removeBookmark(bookmark) {
