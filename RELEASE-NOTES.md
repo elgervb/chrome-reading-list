@@ -1,6 +1,7 @@
+# 0.0.6
+- **default icon** add a default icon for a bookmark in the popup when no favicon present
 # 0.0.5
 - **GA** add google analytics to improve this plugin
-- **default icon** add a default icon for a bookmark in the popup when no favicon present
 
 # 0.0.4
 - **bug** item was not removed from the list after clicking on it
