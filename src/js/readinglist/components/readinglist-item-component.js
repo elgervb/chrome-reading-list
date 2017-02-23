@@ -26,10 +26,6 @@ class ReadinglistItemController {
         });
     }
 
-    onErrorImgLoad() {
-        debugger;
-    }
-
     removeBookmark(bookmark) {
         this.manager.removeBookmark(bookmark.id, () => {
             this.hidden = true;
