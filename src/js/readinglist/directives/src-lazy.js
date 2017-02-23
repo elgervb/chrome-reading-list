@@ -1,4 +1,3 @@
-
 export class SrcLazyDirective {
     constructor($window, Debouncer) {
         this.restrict = 'A';
@@ -14,7 +13,7 @@ export class SrcLazyDirective {
             this.scrollContainer = this.$window;
         }
 
-        element[0].onerror = this.onError;
+        element[0].onerror = this.onError.bind(this);
 
         this.lazyLoad(element, attrs.srcLazy);
         this.scope.onScroll = this.Debouncer.debounce(() => {
@@ -40,13 +39,12 @@ export class SrcLazyDirective {
     }
 
     onError(e) {
-        const element = e.target;
-
-        console.log('asfd');
+        const src = '/assets/bookmark-default.svg';
         debugger;
-        e.currentTarget = laksdfjlaskjf
+        this.lazyLoad(angular.element(e.currentTarget), src);
 
-        this.lazyLoad(element);
+        // remove onerror to prevent endless loop
+        delete this.onerror;
     }
 
     $destroy() {

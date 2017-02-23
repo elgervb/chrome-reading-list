@@ -28,7 +28,8 @@
   },
   "globals": {
       "chrome": true,
-      "ga": true
+      "ga": true,
+      "angular": true
   },
   "env": {
     "browser": true,
